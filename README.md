@@ -63,11 +63,11 @@ Para instalar y ejecutar el proyecto localmente, sigue estos pasos:
  ## Configuración de componentes
 | Nombre del Componente | Descripción | Enlace |
 |-----------------------|-------------|--------|
-| Navbar              | Proporciona la navegación principal de la aplicación. | [Navbar.tsx](src/components/NavBar.tsx) |
-| Welcome             | Página de bienvenida de la aplicación. | [Welcome.tsx](src/components/Welcome.tsx) |
-| Dashboard           | Muestra una lista de productos con nombre, precio y descripción. | [Dashboard.tsx](src/pages/Dashboard.tsx) |
+| Navbar              | Proporciona la navegación principal de la aplicación. | [NavBar.tsx](src/components/NavBar.tsx) |
+| Home             | Página de bienvenida de la aplicación. | [Home.tsx](src/pages/Home.tsx) |
+| Products           | Muestra una lista de productos con nombre y precio. | [Products.tsx](src/pages/Products.tsx) |
 | Products            | Permite ver y eliminar productos. | [Products.tsx](src/pages/Products.tsx) |
-| AddProduct          | Formulario para añadir nuevos productos. | [AddProduct.tsx](src/pages/AddProduct.tsx) |
+| ProductForm          | Formulario para añadir nuevos productos. | [ProductForm.tsx](src/pages/ProductForm.tsx) |
 | api                 | Contiene las funciones para realizar solicitudes HTTP al servidor. | [api.ts](src/services/api.ts) |
 | App                 | Configuración de las rutas de la aplicación. | [App.tsx](src/App.tsx) |
 | main                | Punto de entrada principal de la aplicación. | [main.tsx](src/main.tsx) |
