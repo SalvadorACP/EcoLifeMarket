@@ -70,7 +70,7 @@ Para instalar y ejecutar el proyecto localmente, sigue estos pasos:
 | ProductForm          | Formulario para añadir nuevos productos. | [ProductForm.tsx](src/pages/ProductForm.tsx) |
 | ProductDetails                 | Muestra los detalles de un producto seleccionado. | [ProductDetails.tsx](src/pages/ProductDetails.tsx) |
 | App                 | Configuración de las rutas de la aplicación. | [App.tsx](src/App.tsx) |
-| AppTest                 | Configuración de peurba global para el componente principal. | [App.test.tsx](src/App.test.tsx) |
+| AppTest                 | Configuración de prueba global para el componente principal. | [App.test.tsx](src/App.test.tsx) |
 
 ## Estructura de los Archivos de Prueba
 
@@ -79,31 +79,32 @@ Los archivos de prueba están ubicados en el mismo directorio que los componente
 Ejemplo de un archivo de prueba:
 
 ```typescript
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import { describe, it, expect } from 'vitest';
-import Login from './Login';
-import { AuthProvider } from '../context/AuthContext';
+import App from './App';
+import { AuthProvider } from './context/AuthContext';
 
-describe('Login Component', () => {
-  it('renders login form', () => {
+describe('App Component', () => {
+  it('renders App component with header and routes', () => {
     render(
-      <AuthProvider>
-        <Login />
-      </AuthProvider>
+      
+        <AuthProvider>
+          <App />
+        </AuthProvider>
+      
     );
-    expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/password/i)).toBeInTheDocument();
-  });
 
-  it('shows error message when fields are empty', () => {
-    render(
-      <AuthProvider>
-        <Login />
-      </AuthProvider>
-    );
-    fireEvent.click(screen.getByText(/login/i));
-    expect(screen.getByText(/all fields are required/i)).toBeInTheDocument();
+    // Verificar que el encabezado se renderiza
+    expect(screen.getByText('EcoLife Market')).toBeInTheDocument();
+
+    // Verificar que las rutas principales están presentes
+    expect(screen.getByText('Home')).toBeInTheDocument();
+    expect(screen.getByText('Products')).toBeInTheDocument();
+    expect(screen.getByText('About Us')).toBeInTheDocument();
+    expect(screen.getByText('Contact')).toBeInTheDocument();
   });
 });
+
 
 
