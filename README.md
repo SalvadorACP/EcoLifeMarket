@@ -63,7 +63,7 @@ Para instalar y ejecutar el proyecto localmente, sigue estos pasos:
  ## Configuración de componentes
 | Nombre del Componente | Descripción | Enlace |
 |-----------------------|-------------|--------|
-| Navbar              | Proporciona la navegación principal de la aplicación. | [Navbar.tsx](src/components/Navbar.tsx) |
+| Navbar              | Proporciona la navegación principal de la aplicación. | [Navbar.tsx](src/components/NavBar.tsx) |
 | Welcome             | Página de bienvenida de la aplicación. | [Welcome.tsx](src/components/Welcome.tsx) |
 | Dashboard           | Muestra una lista de productos con nombre, precio y descripción. | [Dashboard.tsx](src/pages/Dashboard.tsx) |
 | Products            | Permite ver y eliminar productos. | [Products.tsx](src/pages/Products.tsx) |
