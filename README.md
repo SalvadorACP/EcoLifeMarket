@@ -1,7 +1,7 @@
-# [Ecolife Market](https://github.com/SalvadorACP/EcoLifeMarket) - [React](https://reactjs.org) + [TypeScript](https://www.typescriptlang.org) + [Vite](https://vitejs.dev)
+# [EcoLife Market](https://github.com/SalvadorACP/EcoLifeMarket) - [React](https://reactjs.org) + [TypeScript](https://www.typescriptlang.org) + [Vite](https://vitejs.dev)
 
 
-EmpathyShop es una aplicación web desarrollada con React, TypeScript y Vite. La aplicación permite a los usuarios ver una lista de productos con sus nombres, precios y descripciones, así como añadir y eliminar productos. 
+EcoLife Market es una aplicación web de comercio electrónico centrada en la venta de productos orgánicos de bienestar e higiene. La aplicación permite a los usuarios ver una lista de productos con sus nombres, precios y descripciones, así como añadir y eliminar productos.
 
 ## Tecnologías Utilizadas
 
@@ -9,7 +9,6 @@ EmpathyShop es una aplicación web desarrollada con React, TypeScript y Vite. La
 - TypeScript
 - Vite
 - React Router
-- Adroid Studio
 - Visual Studio Code
 
 ## Estructura del Proyecto
@@ -17,18 +16,30 @@ EmpathyShop es una aplicación web desarrollada con React, TypeScript y Vite. La
 El proyecto tiene la siguiente estructura de directorios:
 
 /src
-/components
-Navbar.tsx
-Welcome.tsx
-/pages
-Dashboard.tsx
-Products.tsx
-AddProduct.tsx
-/services
-api.ts
+   /components
+      NavBar.tsx
+      Header.tsx
+      Footer.tsx
+   /context
+      AuthContext.tsx
+   /CssComponents
+      Footer.css
+      Login.css
+      ProductDetails.css
+      Products.css
+   /pages
+      About.tsx
+      Contact.tsx
+      Home.tsx
+      Login.tsx
+      ProductDetails.tsx
+      ProductForm.tsx
+      Products.tsx
+      Signup.tsx
+App.test.tsx
 App.tsx
-main.tsx
-index.css
+AppRouter.tsx
+
 
 ## Instalación
 
@@ -36,10 +47,10 @@ Para instalar y ejecutar el proyecto localmente, sigue estos pasos:
 
 1. Clona el repositorio:
    bash
-   git clone <https://github.com/Iglesias0714/AWM-Proyecto-Final-EmpathyShop>
+   git clone <https://github.com/SalvadorACP/EcoLifeMarket>
 2. Navega al directorio del proyecto:
    bash
-   cd EmpathyShop
+   cd EcoLifeMarket
 3. Instala las dependencias:
    bash
    npm install
@@ -47,7 +58,7 @@ Para instalar y ejecutar el proyecto localmente, sigue estos pasos:
    bash
    npm run dev
 5. Servidor o Backend de la aplicación
-   [Backend-EmpathyShop](https://github.com/Iglesias0714/Backend-EmpathyShop)
+   [Backend-EcoLifeMarket](https://github.com/SalvadorACP/Ecolife-Market-Backend)
    
  ## Configuración de componentes
 | Nombre del Componente | Descripción | Enlace |
