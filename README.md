@@ -68,7 +68,8 @@ Para instalar y ejecutar el proyecto localmente, sigue estos pasos:
 | Products           | Muestra una lista de productos con nombre y precio. | [Products.tsx](src/pages/Products.tsx) |
 | Products            | Permite ver y eliminar productos. | [Products.tsx](src/pages/Products.tsx) |
 | ProductForm          | Formulario para añadir nuevos productos. | [ProductForm.tsx](src/pages/ProductForm.tsx) |
-| api                 | Contiene las funciones para realizar solicitudes HTTP al servidor. | [api.ts](src/services/api.ts) |
+| ProductDetails                 | Muestra los detalles de un producto seleccionado. | [ProductDetails.tsx](src/pages/ProductDetails.tsx) |
 | App                 | Configuración de las rutas de la aplicación. | [App.tsx](src/App.tsx) |
-| main                | Punto de entrada principal de la aplicación. | [main.tsx](src/main.tsx) |
-| index.css           | Estilos globales de la aplicación. | [index.css](src/index.css) |
+| AppTest                 | Configuración de peurba global para el componente principal. | [App.test.tsx](src/App.test.tsx) |
+
+
