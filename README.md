@@ -1,30 +1,150 @@
-# React + TypeScript + Vite
+# [EcoLife Market](https://github.com/tu-usuario/EcoLife-Market) - [React](https://reactjs.org) + [TypeScript](https://www.typescriptlang.org) + [Vite](https://vitejs.dev)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+EcoLife Market es una aplicación web de comercio electrónico centrada en la venta de productos orgánicos de bienestar e higiene. La aplicación permite a los usuarios ver una lista de productos con sus nombres, precios y descripciones, así como añadir, editar y eliminar productos.
 
-Currently, two official plugins are available:
+## Tecnologías Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- TypeScript
+- Vite
+- React Router
+- Visual Studio Code
 
-## Expanding the ESLint configuration
+## Estructura del Proyecto
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+El proyecto tiene la siguiente estructura de directorios:
 
-- Configure the top-level `parserOptions` property like this:
+ecolife-market/
+├── public/
+├── src/
+│ ├── components/
+│ │ ├── Header.tsx
+│ │ ├── Footer.tsx
+│ │ ├── NavBar.tsx
+│ │ ├── ProductItem.tsx
+│ ├── context/
+│ │ ├── AuthContext.tsx
+│ ├── pages/
+│ │ ├── Home.tsx
+│ │ ├── Products.tsx
+│ │ ├── ProductDetails.tsx
+│ │ ├── AddProduct.tsx
+│ │ ├── EditProduct.tsx
+│ │ ├── Login.tsx
+│ │ ├── SignUp.tsx
+│ ├── styles/
+│ │ ├── Login.css
+│ │ ├── Products.css
+│ ├── App.tsx
+│ ├── AppRouter.tsx
+│ ├── index.tsx
+├── .gitignore
+├── package.json
+├── tsconfig.json
+├── README.md
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+bash
+Copiar código
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Instalación
+
+Para instalar y ejecutar el proyecto localmente, sigue estos pasos:
+
+1. Clona el repositorio:
+
+   ```sh
+   git clone https://github.com/tu-usuario/EcoLife-Market.git
+Navega al directorio del proyecto:
+
+sh
+Copiar código
+cd ecolife-market
+Instala las dependencias:
+
+sh
+Copiar código
+npm install
+Inicia el servidor de desarrollo:
+
+sh
+Copiar código
+npm run dev
+Configuración de Componentes
+Nombre del Componente	Descripción	Enlace
+Navbar	Proporciona la navegación principal de la aplicación.	NavBar.tsx
+Header	Encabezado de la aplicación que incluye el nombre y el logo.	Header.tsx
+Footer	Pie de página de la aplicación.	Footer.tsx
+ProductItem	Componente para mostrar la información de un producto individual.	ProductItem.tsx
+AuthContext	Proporciona contexto de autenticación para la aplicación.	AuthContext.tsx
+Home	Página de inicio de la aplicación.	Home.tsx
+Products	Página para ver y gestionar productos.	Products.tsx
+ProductDetails	Página para ver los detalles de un producto.	ProductDetails.tsx
+AddProduct	Formulario para añadir nuevos productos.	AddProduct.tsx
+EditProduct	Formulario para editar productos existentes.	EditProduct.tsx
+Login	Página de inicio de sesión.	Login.tsx
+SignUp	Página de registro de nuevos usuarios.	SignUp.tsx
+App	Configuración de las rutas de la aplicación.	App.tsx
+AppRouter	Configuración de enrutamiento principal de la aplicación.	AppRouter.tsx
+index	Punto de entrada principal de la aplicación.	index.tsx
+Login.css	Estilos específicos para la página de inicio de sesión.	Login.css
+Products.css	Estilos específicos para la página de productos.	Products.css
+Descripción de las Pruebas
+El proyecto utiliza Vitest y Testing Library para realizar pruebas.
+
+Tipos de Pruebas
+Pruebas de Renderizado: Verifica que los componentes se renderizan correctamente.
+Pruebas de Funcionalidad: Verifica que las funciones críticas, como el login y la gestión de productos, funcionan como se espera.
+Pruebas de Integración: Asegura que los componentes funcionan bien juntos.
+Ejecución de las Pruebas
+Para ejecutar todas las pruebas, usa el siguiente comando:
+
+sh
+Copiar código
+npm test
+Para ejecutar pruebas específicas, puedes usar el siguiente comando:
+
+sh
+Copiar código
+npm test -- <ruta/al/archivo/de/prueba>
+Por ejemplo:
+
+sh
+Copiar código
+npm test -- src/pages/Login.test.tsx
+Estructura de los Archivos de Prueba
+Los archivos de prueba están ubicados en el mismo directorio que los componentes a los que prueban, con el sufijo .test.tsx.
+
+Ejemplo de un archivo de prueba:
+
+typescript
+Copiar código
+import { render, screen, fireEvent } from '@testing-library/react';
+import { describe, it, expect } from 'vitest';
+import Login from './Login';
+import { AuthProvider } from '../context/AuthContext';
+
+describe('Login Component', () => {
+  it('renders login form', () => {
+    render(
+      <AuthProvider>
+        <Login />
+      </AuthProvider>
+    );
+    expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/password/i)).toBeInTheDocument();
+  });
+
+  it('shows error message when fields are empty', () => {
+    render(
+      <AuthProvider>
+        <Login />
+      </AuthProvider>
+    );
+    fireEvent.click(screen.getByText(/login/i));
+    expect(screen.getByText(/all fields are required/i)).toBeInTheDocument();
+  });
+});
+Contribuciones
+Las contribuciones son bienvenidas. Por favor, abre un issue o envía un pull request para cualquier mejora o corrección.
+
+Licencia
